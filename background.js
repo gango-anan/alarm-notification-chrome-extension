@@ -12,13 +12,16 @@ chrome.alarms.onAlarm.addListener(() => {
 });
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-	if (request.time) createAlarm();
+	const myTime = request.time;
+	if (myTime) {
+		createAlarm(Number(myTime));
+	}
 	sendResponse({ status: true });
 });
 
-function createAlarm() {
+function createAlarm(myTime) {
 	chrome.alarms.create('rest_eyes', {
-		delayInMinutes: 1,
+		delayInMinutes: myTime,
 		periodInMinutes: 1,
 	});
 }
