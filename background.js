@@ -22,6 +22,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 function createAlarm(myTime) {
 	chrome.alarms.create('rest_eyes', {
 		delayInMinutes: myTime,
-		periodInMinutes: 1,
+		periodInMinutes: myTime,
 	});
 }
