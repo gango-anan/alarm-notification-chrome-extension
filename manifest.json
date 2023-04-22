@@ -1,0 +1,13 @@
+{
+	"manifest_version": 3,
+	"name": "Rest Notifier",
+	"description": "Rest your eyes reminder",
+	"version": "1.0.0",
+	"background": {
+		"service_worker": "background.js"
+	},
+	"permissions": ["notifications", "alarms", "storage"],
+	"action": {
+		"default_popup": "popup/popup.html"
+	}
+}
