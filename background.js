@@ -13,6 +13,7 @@ chrome.alarms.onAlarm.addListener(() => {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	if (request.time) createAlarm();
+	sendResponse({ status: true });
 });
 
 function createAlarm() {
